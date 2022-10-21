@@ -35,6 +35,69 @@ class PetController extends Controller
         return view('petsPage.show', compact('animal'));
     }
 
+
+    /// ------------------------------
+    // public function create()
+    // {
+
+    //     $animal = new Animal;
+
+
+    //     return view('petsPage.upsert', compact('animal'));
+    // }
+
+
+    public function edit(Request $request, $id)
+    {
+        $animal = Animal::findOrFail($id);
+        return view('petsPage/upsert', compact('animal'));
+    }
+
+
+    public function store(Request $request)
+    {
+        $this->validate(
+            $request,
+            [
+                'name' => 'required|min:2'
+            ]
+        );
+        $animal = new Animal;
+        $animal->name = $request->input('name');
+        $animal->save();
+
+        session()->flash('success_message', 'The new details was successfully saved.');
+
+        return redirect()->route('pets.show', $animal->id);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $this->validate(
+            $request,
+            [
+                'name' => 'required|min:3'
+            ]
+        );
+        $animal = Animal::findOrFail($id);
+        $animal->name = $request->input('name');
+        $animal->save();
+        session()->flash('success_message', 'The new details was successfully saved.');
+        return redirect()->route('pets.show', $animal->id);
+    }
+
+    public function delete($id)
+    {
+        $animal = Animal::findOrFail($id);
+
+        $animal->delete();
+        session()->flash('success_message', 'The new details was successfully deleted.');
+        return redirect()->route('pets.show');
+    }
+
+    // ---------------
+
+
     // public function create()
     // {
     //     return view('petsPage.create');
