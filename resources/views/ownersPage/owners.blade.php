@@ -1,8 +1,16 @@
 @extends('navigation')
 @section('content')
 
+<style>
+  .ownersDiv {
+    display: flex;
+    flex-direction: column;
+    align-content: left;
+    margin: 2rem;
+  }
+</style>
 
-<div class="max-w-6xl mx-auto sm:px-6 lg:px-8" style="color: white;">
+<div class="ownersDiv" style="color: white;">
         
     <ul>
         @foreach ($owners as $owner)
