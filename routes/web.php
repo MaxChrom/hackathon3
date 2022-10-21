@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IndexContoller;
+use App\Http\Controllers\SearchController;
+use App\Http\Controllers\OwnerController;
+use App\Http\Controllers\PetController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('navigation');
+// });
+
+Route::get('/', [IndexContoller::class, 'index'])->name('home.index');
+Route::get('/owners', [OwnerController::class, 'index'])->name('owners.index');
+Route::get('/pets', [PetController::class, 'index'])->name('pets.index');
