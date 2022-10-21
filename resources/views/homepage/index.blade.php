@@ -99,7 +99,7 @@
                 <ul>
                     @foreach ($results as $result)
                         <li class ="list__container">
-                            <a href="/detail?id=<?= $result->id ?>">
+                            <a href="/pets/<?= $result->id ?>">
                                 Pet name: {{ $result->name }}
                             </a> 
                             <p>Owner: {{$result->owner->surname}} {{$result->owner->first_name}} </p>

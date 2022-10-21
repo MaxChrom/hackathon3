@@ -13,4 +13,8 @@ class Animal extends Model
     {
         return $this->belongsTo(Owner::class);
     }
+    public function image()
+    {
+        return $this->belongsTo(Image::class);
+    }
 }
