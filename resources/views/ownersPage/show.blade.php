@@ -25,12 +25,15 @@
     </head>
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-          <ul>
-          @foreach ($owners as $owner)
-            {{-- need to link to individual show page. no idea how. Something like this: /show/{slug}??????? --}}
-                <li><a href="{{ route("owners.owner", ["id" => $owner->id])}}">{{$owner->first_name}}{{$owner->surname}}</a></li>
-            @endforeach
-            </ul>
+          <p>{{$owner->first_name}} {{$owner->surname}}</p>
+          <p>{{$owner->address}}</p>
+          <p>{{$owner->email}}</p>
+          <p>{{$owner->phone}}</p>
+          <h3>Pets:</h3>
+          @foreach ($animals as $animal)
+              {{-- link will need to be replaced by D's stuff --}}
+              <a href="{{ route("pets.pet", ["id" => $animal->id])}}">{{ $animal->name }}</a>
+          @endforeach
         </div>
     </body>
 </html>
