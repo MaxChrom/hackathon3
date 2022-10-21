@@ -24,3 +24,4 @@ use App\Http\Controllers\PetController;
 Route::get('/', [IndexContoller::class, 'index'])->name('home.index');
 Route::get('/owners', [OwnerController::class, 'index'])->name('owners.index');
 Route::get('/pets', [PetController::class, 'index'])->name('pets.index');
+Route::get('/pets/{id}', [PetController::class, 'show'])->name('pets.show');
