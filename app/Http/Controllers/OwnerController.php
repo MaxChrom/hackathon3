@@ -20,9 +20,10 @@ class OwnerController extends Controller
         return view('ownersPage.owners', ['owners' => $owners]);
     }
 
-    public function owner()
+    public function owner(Request $request, $id)
     {
-        $owner = Owner::find(9);
-        return view('ownersPage.show', ['owner' => $owner]);
+        $owner = Owner::find($id);
+        // dd($owner->animals[0]);
+        return view('ownersPage.show', compact('owner'));
     }
 }
