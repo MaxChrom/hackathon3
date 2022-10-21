@@ -28,7 +28,7 @@
     </head>
     <body class="antialiased">
         
-         <div class="relative p-4">
+        <div class="relative p-4">
             <nav>
                 <a href="{{route ('home.index') }}">Home</a>
                 <a href="{{route ('owners.index') }}">Owners</a>

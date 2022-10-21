@@ -11,9 +11,6 @@
 
         <!-- Styles -->
         <style>
-            *{
-                color:white;
-            }
             .preview__container{
                 display: flex;
                 flex-direction: column;
@@ -25,18 +22,106 @@
             body {
                 font-family: 'Nunito', sans-serif;
             }
+             h1,li{
+                color:white;
+            }
+            .list__container{
+                
+                box-shadow: white 0px 4px 12px;
+                border-radius: 8px;
+                text-align: center;
+            }
+            ul{
+                list-style: none;
+                margin-left: -3rem;
+            }
+            *{
+                text-align: center;
+            }
+            .input__container{
+                width: 250px;
+                height: 50px;
+                font-size: 3rem;
+                border-radius: 8px;
+            }
+            form{
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+            }
+            button{
+                    background-color: white;
+                    border-radius: 8px;
+                    border-width: 0;
+                    color: #333333;
+                    cursor: pointer;
+                    display: inline-block;
+                    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+                    font-size: 14px;
+                    font-weight: 500;
+                    line-height: 20px;
+                    list-style: none;
+                    margin: 0;
+                    padding: 10px 12px;
+                    text-align: center;
+                    transition: all 200ms;
+                    vertical-align: baseline;
+                    white-space: nowrap;
+                    user-select: none;
+                    -webkit-user-select: none;
+                    touch-action: manipulation;
+                    width:50%;
+                    margin: auto;
+                    margin-top:1rem;
+            }
+            .radio{
+                color:white;
+            }
         </style>
     </head>
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
            <div class="preview__container">
-                <h1>List of pets</h1><br>
+                <h1>Search the pet</h1>
+                <form action="/" method="get">
+                    <input class ="input__container"
+                        type="text"
+                        name="search"
+                        value="<?= htmlspecialchars($searching) ?>"
+                    >
+                    <div class="radio">
+                    <input  type="radio" name="search_by" value="animal" style=""> Animal
+                    <input  type="radio" name="search_by" value="owner"> Owner
+                    <button>Search</button>
+                    </div>
+                </form>
+                <div class="split__container">
                 <ul>
-                        @foreach ($animals as $animal)
-                            <li>{{$animal->name}}</li>
-                        @endforeach
+                    @foreach ($results as $result)
+                        <li class ="list__container">
+                            <a href="/detail?id=<?= $result->id ?>">
+                                Pet name: {{ $result->name }}
+                            </a> 
+                            <p>Owner: {{$result->owner->surname}} {{$result->owner->first_name}} </p>
+                        </li>
+                    @endforeach
                 </ul>
+                <ul>
+                    @foreach ($resultsOwners as $resultOwner)
+                        <li class ="list__container">
+                            <a href="/detail?id=<?= $resultOwner->id ?>">
+                                Owner: {{ $resultOwner->surname }}
+                            </a> 
+                            @foreach ($resultOwner->animals as $animal)
+                                <p> Pet name: {{$animal->name}} </p>
+                            @endforeach
+                            
+                        </li>
+                    @endforeach
+                </ul>
+                </div>
            </div>
         </div>
-    </body>
+            
+                
 </html>
