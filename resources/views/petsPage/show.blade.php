@@ -6,17 +6,18 @@
 
         
            <div> 
-              <ul>
-                 <li>Name:{{$animal->name}}</li>
-                 <li>Species:{{$animal->species}}</li>
-                <li> Owner: {{$animal->owner->first_name." ".$animal->owner->surname}}</li>
-                <li>Breed:{{$animal->breed}}</li>
-                <li> Weight in pounds: {{$animal->weight}}</li>
-                <li> Age: {{$animal->age}}</li>
-
+              <ul class="pet__container" >
+               <li>Name: {{$animal->name}}</li>
+               <li>Species: {{$animal->species}}</li>
+               <li>Breed: {{$animal->breed}}</li>
+               <li> Weight in pounds: {{$animal->weight}}</li>
+               <li> Age: {{$animal->age}}</li>
+               <br>
+               <li> Owner: {{$animal->owner->first_name." ".$animal->owner->surname}}</li>
               </ul>
-                
-             
+               <form action="{{Route('pets.edit',  ['id' => $animal->id])}}">
+                  <button>EDIT</button>
+               </form>
           </div>
        
 

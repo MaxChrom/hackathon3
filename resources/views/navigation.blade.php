@@ -24,6 +24,76 @@
             nav a {
                 padding: .5rem;
             }
+            body {
+                font-family: 'Nunito', sans-serif;
+            }
+             h1,li{
+                color:white;
+            }
+            h3{
+                color:white;
+            }
+            .list__container{
+                
+                box-shadow: white 0px 4px 12px;
+                border-radius: 8px;
+                text-align: center;
+            }
+            ul{
+                list-style: none;
+                margin-left: -3rem;
+            }
+            *{
+                text-align: center;
+            }
+            .input__container{
+                width: 250px;
+                height: 50px;
+                font-size: 3rem;
+                border-radius: 8px;
+            }
+            form{
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+            }
+            button{
+                    background-color: white;
+                    border-radius: 8px;
+                    border-width: 0;
+                    color: #333333;
+                    cursor: pointer;
+                    display: inline-block;
+                    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+                    font-size: 14px;
+                    font-weight: 500;
+                    line-height: 20px;
+                    list-style: none;
+                    margin: 0;
+                    padding: 10px 12px;
+                    text-align: center;
+                    transition: all 200ms;
+                    vertical-align: baseline;
+                    white-space: nowrap;
+                    user-select: none;
+                    -webkit-user-select: none;
+                    touch-action: manipulation;
+                    width:50%;
+                    margin: auto;
+                    margin-top:1rem;
+            }
+            .radio{
+                color:white;
+            }
+            .pet__container{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                font-size: 2rem;
+
+                
+                
+            }
         </style>
     </head>
     <body class="antialiased">
