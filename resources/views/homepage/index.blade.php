@@ -32,9 +32,13 @@
             }
             .list__container{
                 
-                box-shadow: white 0px 4px 12px;
+                /* box-shadow: white 0px 4px 12px; */
+                box-shadow: silver 0px 7px 29px 0px;
                 border-radius: 8px;
                 text-align: center;
+                height: 100px;
+                margin: 1rem;
+                padding: 1rem;
             }
             ul{
                 list-style: none;
@@ -48,6 +52,7 @@
                 height: 50px;
                 font-size: 3rem;
                 border-radius: 8px;
+                margin: 1rem;
             }
             form{
                 display: flex;
@@ -78,6 +83,7 @@
                     width:50%;
                     margin: auto;
                     margin-top:1rem;
+                    margin-bottom: 1rem;
             }
             .radio{
                 color:white;

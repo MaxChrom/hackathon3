@@ -19,10 +19,18 @@
         @endif
             @csrf
             <label for="name">Name:</label>
-
             <input type="text" name="name" value={{old('name', $animal->name)}}>
+            <label for="name">Age:</label>
+            <input type="number" name="age" value={{old('age', $animal->age)}}> 
+            <label for="name">Weight:</label>
+            <input type="number" name="weight" value={{old('weight', $animal->weight)}}>
 
-            <button type='sumbit'>{{$animal->id ? 'Save' : 'Add'}}</button>
+            
+            
+           
+            
+
+            <button type='submit'>{{$animal->id ? 'Save' : 'Add'}}</button>
 
         </form>
         @if($animal->id)

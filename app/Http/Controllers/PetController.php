@@ -81,6 +81,8 @@ class PetController extends Controller
         );
         $animal = Animal::findOrFail($id);
         $animal->name = $request->input('name');
+        $animal->age = $request->input('age');
+        $animal->weight = $request->input('weight');
         $animal->save();
         session()->flash('success_message', 'The new details was successfully saved.');
         return redirect()->route('pets.show', $animal->id);

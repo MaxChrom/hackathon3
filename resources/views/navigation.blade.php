@@ -27,7 +27,10 @@
             body {
                 font-family: 'Nunito', sans-serif;
             }
-             h1,li{
+             h1,li,p{
+                color:white;
+            }
+            .pet__container{
                 color:white;
             }
             h3{

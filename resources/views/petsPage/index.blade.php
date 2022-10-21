@@ -2,9 +2,11 @@
 @section('content')
 <style>
 .myDiv {
-display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+/* display: flex;
+  flex-direction: column;
+  flex-wrap: wrap; */
+  display:grid;
+  grid-template-columns: 1fr 1fr; 
 }
 .myDiv a  {
 display: flex;

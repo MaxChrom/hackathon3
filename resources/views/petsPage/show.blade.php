@@ -2,17 +2,16 @@
 
 @section('content')
 <style>
-    .img {
-         max-width: 100%;
-      }
-   
+    .img{
+      margin: 1rem;
+    }
 </style>
-   <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-<div class="img">
+   <div>
+               <div class="img">
                <img src="/images/pets/{{ $animal->image->path }}" alt="">
               </div>
 
-<div> 
+         <div class="list__container_1"> 
                  <ul class="pet__container" >
                <li>Name: {{$animal->name}}</li>
                <li>Species: {{$animal->species}}</li>
