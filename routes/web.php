@@ -21,6 +21,6 @@ use App\Http\Controllers\PetController;
 //     return view('navigation');
 // });
 
-Route::get('/', [IndexContoller::class, 'index'])->name('home.index');
+Route::get('/', [IndexContoller::class, 'searchPet'])->name('home.index');
 Route::get('/owners', [OwnerController::class, 'index'])->name('owners.index');
 Route::get('/pets', [PetController::class, 'index'])->name('pets.index');

@@ -28,16 +28,12 @@
     </head>
     <body class="antialiased">
         
-         <div class="relative p-4">
+        <div class="relative p-4">
             <nav>
                 <a href="{{route ('home.index') }}">Home</a>
                 <a href="{{route ('owners.index') }}">Owners</a>
                 <a href="{{route ('pets.index') }}">Pets</a>
             </nav>
-         </div>
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-         @yield('content')
         </div>
-        @yield('scripts')
     </body>
 </html>
